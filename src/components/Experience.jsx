@@ -19,7 +19,7 @@ const experiences = [
     year: '2023 — present',
     role: 'BSc Student',
     company: 'Addis Ababa University',
-    desc: 'Second-year Electrical and Computer Engineering student. Coursework spanning circuits, signal processing, computer architecture, and software engineering.',
+    desc: 'Second-year Electrical and Computer Engineering student. Coursework spanning Object Oriented Programming, Applied Electronics, computer architecture, and Computational Methods.',
     tags: ['ECE', 'Signal Processing', 'Computer Architecture'],
   },
 ]

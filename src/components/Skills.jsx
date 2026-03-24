@@ -5,7 +5,7 @@ const skillGroups = [
   { cat: 'Frontend', skills: ['Next.js', 'React', 'Tailwind CSS', 'Vite'] },
   { cat: 'Backend', skills: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs'] },
   { cat: 'Machine Learning', skills: ['PyTorch', 'HuggingFace', 'Whisper', 'LoRA Fine-tuning', 'XTTSv2'] },
-  { cat: 'MLOps & Infra', skills: ['Kaggle GPU', 'wandb', 'Vercel', 'Railway'] },
+  { cat: 'MLOps & Infra', skills: ['Kaggle','Google Collab', 'wandb', 'Railway'] },
   { cat: 'Tools', skills: ['Git', 'GitHub', 'Linux', 'Bash', 'VS Code'] },
 ]
 

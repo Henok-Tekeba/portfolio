@@ -17,7 +17,7 @@ export default function Footer() {
         letterSpacing: '0.1em',
         color: 'var(--text-3)',
       }}>
-        © 2025 <span style={{ color: 'var(--text-2)' }}>Henok Kebede</span>. Built with intention.
+        © 2026 <span style={{ color: 'var(--text-2)' }}>Henok Tekeba</span>
       </p>
       <p style={{
         fontFamily: 'var(--mono)',
