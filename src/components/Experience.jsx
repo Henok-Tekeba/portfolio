@@ -5,7 +5,7 @@ const experiences = [
     year: '2024 — present',
     role: 'Founder & AI Engineer',
     company: 'voiET',
-    desc: 'Building Amharic voice AI for Ethiopian banks and telecoms. Fine-tuning Whisper for Amharic ASR, designing a TTS pipeline with XTTSv2, and shipping a full-stack waitlist platform with Next.js and PostgreSQL.',
+    desc: 'Building Amharic voice AI for Ethiopian banks and telecoms. Fine tuning Whisper for Amharic ASR, designing a TTS pipeline with XTTSv2, and shipping a full-stack waitlist platform with Next.js and PostgreSQL.',
     tags: ['PyTorch', 'HuggingFace', 'Whisper', 'Next.js', 'PostgreSQL'],
   },
   {
