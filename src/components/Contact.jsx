@@ -1,9 +1,11 @@
+import useWindowSize from '../hooks/useWindowSize'
+
 const links = [
   { label: 'Email', value: 'tekebahenok6@gmail.com', href: 'mailto:tekebahenok6@gmail.com' },
-  { label: 'GitHub', value: 'Henok-Tekeba', href: 'https://github.com/Henok-Tekeba' },
+  { label: 'GitHub', value: '@Henok-Tekeba', href: 'https://github.com/Henok-Tekeba' },
   { label: 'HuggingFace', value: 'Henokk', href: 'https://huggingface.co/Henokk' },
-  { label: 'X (Twitter)', value: 'Henok_Teke', href: 'https://x.com/Henok_Teke' },
-  { label: 'LinkedIn', value: 'Henok Tekeba', href: 'https://linkedin.com/in/Henok_Tekeba' },
+  { label: 'X (Twitter)', value: '@YOUR_HANDLE', href: 'https://x.com/YOUR_HANDLE' },
+  { label: 'LinkedIn', value: 'Henok Kebede', href: 'https://linkedin.com/in/henok-ayele-6ab58b356/' },
 ]
 
 const ArrowIcon = () => (
@@ -13,9 +15,12 @@ const ArrowIcon = () => (
 )
 
 export default function Contact() {
+  const width = useWindowSize()
+  const isMobile = width < 768
+
   return (
     <section id="contact" style={{
-      padding: '8rem 3rem',
+      padding: isMobile ? '5rem 1.5rem' : '8rem 3rem',
       position: 'relative',
       zIndex: 1,
       borderTop: '1px solid var(--border)',
@@ -29,26 +34,15 @@ export default function Contact() {
         gap: '1rem',
         marginBottom: '4rem',
       }}>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--accent)',
-          letterSpacing: '0.15em',
-        }}>05</span>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--text-2)',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-        }}>contact</span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.15em' }}>05</span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>contact</span>
         <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
       </div>
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '6rem',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+        gap: isMobile ? '3rem' : '6rem',
         alignItems: 'start',
       }}>
         <div>
@@ -70,7 +64,7 @@ export default function Contact() {
             color: 'var(--text-2)',
             lineHeight: 1.8,
           }}>
-            Open to work, research collaborations and more.
+            Open to internships, research collaborations, and summer programs.
             If you're working on something meaningful in AI or systems — I'd love to talk.
           </p>
         </div>
@@ -101,22 +95,8 @@ export default function Contact() {
                 e.currentTarget.style.borderColor = 'var(--border)'
               }}
             >
-              <span style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '0.65rem',
-                letterSpacing: '0.1em',
-                color: 'var(--text-3)',
-                textTransform: 'uppercase',
-              }}>{label}</span>
-              <span style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 'var(--display-weight-light)',
-                fontSize: '0.9rem',
-                color: 'var(--text-2)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-              }}>
+              <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'var(--text-3)', textTransform: 'uppercase' }}>{label}</span>
+              <span style={{ fontFamily: 'var(--display)', fontWeight: 'var(--display-weight-light)', fontSize: '0.9rem', color: 'var(--text-2)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 {value} <ArrowIcon />
               </span>
             </a>

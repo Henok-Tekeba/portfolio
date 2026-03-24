@@ -1,3 +1,5 @@
+import useWindowSize from '../hooks/useWindowSize'
+
 const skillGroups = [
   { cat: 'Languages', skills: ['Python', 'TypeScript', 'JavaScript', 'Java'] },
   { cat: 'Frontend', skills: ['Next.js', 'React', 'Tailwind CSS', 'Vite'] },
@@ -8,9 +10,12 @@ const skillGroups = [
 ]
 
 export default function Skills() {
+  const width = useWindowSize()
+  const isMobile = width < 768
+
   return (
     <section id="skills" style={{
-      padding: '8rem 3rem',
+      padding: isMobile ? '5rem 1.5rem' : '8rem 3rem',
       position: 'relative',
       zIndex: 1,
       borderTop: '1px solid var(--border)',
@@ -24,33 +29,24 @@ export default function Skills() {
         gap: '1rem',
         marginBottom: '4rem',
       }}>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--accent)',
-          letterSpacing: '0.15em',
-        }}>04</span>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--text-2)',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-        }}>skills & tools</span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.15em' }}>04</span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>skills & tools</span>
         <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
       </div>
 
       <div className="reveal d1" style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
         gap: '0',
         border: '1px solid var(--border)',
       }}>
         {skillGroups.map((group, i) => (
           <div key={i} style={{
             padding: '2rem',
-            borderRight: i % 3 !== 2 ? '1px solid var(--border)' : 'none',
-            borderBottom: i < 3 ? '1px solid var(--border)' : 'none',
+            borderRight: !isMobile && i % 3 !== 2 ? '1px solid var(--border)' : 'none',
+            borderBottom: isMobile && i < skillGroups.length - 1
+              ? '1px solid var(--border)'
+              : !isMobile && i < 3 ? '1px solid var(--border)' : 'none',
           }}>
             <p style={{
               fontFamily: 'var(--mono)',
@@ -72,13 +68,7 @@ export default function Skills() {
                   alignItems: 'center',
                   gap: '0.6rem',
                 }}>
-                  <span style={{
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '50%',
-                    background: 'var(--text-3)',
-                    flexShrink: 0,
-                  }} />
+                  <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--text-3)', flexShrink: 0 }} />
                   {skill}
                 </li>
               ))}

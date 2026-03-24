@@ -1,3 +1,5 @@
+import useWindowSize from '../hooks/useWindowSize'
+
 const experiences = [
   {
     year: '2024 — present',
@@ -23,9 +25,12 @@ const experiences = [
 ]
 
 export default function Experience() {
+  const width = useWindowSize()
+  const isMobile = width < 768
+
   return (
     <section id="experience" style={{
-      padding: '8rem 3rem',
+      padding: isMobile ? '5rem 1.5rem' : '8rem 3rem',
       position: 'relative',
       zIndex: 1,
       borderTop: '1px solid var(--border)',
@@ -39,19 +44,8 @@ export default function Experience() {
         gap: '1rem',
         marginBottom: '4rem',
       }}>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--accent)',
-          letterSpacing: '0.15em',
-        }}>02</span>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--text-2)',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-        }}>experience</span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.15em' }}>02</span>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>experience</span>
         <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
       </div>
 
@@ -62,22 +56,20 @@ export default function Experience() {
             className={`reveal ${i > 0 ? `d${i}` : ''}`}
             style={{
               display: 'grid',
-              gridTemplateColumns: '180px 1fr',
-              gap: '3rem',
+              gridTemplateColumns: isMobile ? '1fr' : '180px 1fr',
+              gap: isMobile ? '0.5rem' : '3rem',
               padding: '2.5rem 0',
               borderBottom: '1px solid var(--border)',
             }}
           >
-            <div>
-              <p style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '0.65rem',
-                letterSpacing: '0.1em',
-                color: 'var(--text-3)',
-                textTransform: 'uppercase',
-                marginTop: '0.25rem',
-              }}>{exp.year}</p>
-            </div>
+            <p style={{
+              fontFamily: 'var(--mono)',
+              fontSize: '0.65rem',
+              letterSpacing: '0.1em',
+              color: 'var(--text-3)',
+              textTransform: 'uppercase',
+              marginTop: '0.25rem',
+            }}>{exp.year}</p>
 
             <div>
               <div style={{
@@ -85,6 +77,7 @@ export default function Experience() {
                 alignItems: 'baseline',
                 gap: '0.75rem',
                 marginBottom: '0.75rem',
+                flexWrap: 'wrap',
               }}>
                 <h3 style={{
                   fontFamily: 'var(--display)',
