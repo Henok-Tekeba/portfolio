@@ -59,8 +59,8 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            I'm a second-year Electrical and Computer Engineering student at
-            Addis Ababa University, and the founder of voiET — an Amharic
+            I'm a second year Electrical and Computer Engineering student at
+            Addis Ababa University, and the founder of voiET an Amharic
             voice AI startup targeting Ethiopian banks and telecoms.
           </p>
 
@@ -72,7 +72,7 @@ export default function About() {
             lineHeight: 1.9,
           }}>
             My work sits at the intersection of full-stack engineering and
-            machine learning — fine-tuning AI models for better Amharic AI products , building
+            machine learning fine tuning AI models for better Amharic AI products , building
             TTS pipelines, and shipping production systems that actually work
             for Ethiopian users.
           </p>

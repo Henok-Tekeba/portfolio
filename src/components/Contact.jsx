@@ -4,8 +4,8 @@ const links = [
   { label: 'Email', value: 'tekebahenok6@gmail.com', href: 'mailto:tekebahenok6@gmail.com' },
   { label: 'GitHub', value: '@Henok-Tekeba', href: 'https://github.com/Henok-Tekeba' },
   { label: 'HuggingFace', value: 'Henokk', href: 'https://huggingface.co/Henokk' },
-  { label: 'X (Twitter)', value: '@Henok_Tekeba', href: 'https://x.com/Henok_Tek' },
-  { label: 'LinkedIn', value: 'Henok Tekeba', href: 'https://linkedin.com/in/henok-tekeba-6ab58b356/' },
+  { label: 'X (Twitter)', value: '@Henok_Tekeba', href: 'https://x.com/HenaTeke' },
+  { label: 'LinkedIn', value: 'Henok Tekeba', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?' },
 ]
 
 const ArrowIcon = () => (
@@ -65,7 +65,7 @@ export default function Contact() {
             lineHeight: 1.8,
           }}>
             Open to work, internships, and research collaborations.
-            If you're working on something meaningful in AI or systems — I'd love to talk.
+            If you're working on something meaningful in AI or systems, I'd love to talk.
           </p>
         </div>
 
