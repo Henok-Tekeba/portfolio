@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { SiGithub } from 'react-icons/si'
 import useWindowSize from '../hooks/useWindowSize'
 
 const username = 'Henok-Tekeba'
@@ -118,9 +119,22 @@ export default function GitHubCommitGraph() {
   }
 
   return (
-    <section id="github-graph" className="commit-graph-section reveal">
+    <section id="github-graph" className="commit-graph-section">
+      <div className="reveal commit-graph-shell">
         <div className="commit-graph-topbar">
-          <h2 className="commit-graph-title">GitHub Activity</h2>
+          <div className="commit-graph-heading">
+            <span className="commit-graph-mark">
+              <SiGithub aria-hidden="true" focusable="false" />
+            </span>
+            <div>
+              <p className="commit-graph-kicker">github commit graph</p>
+              <h2 className="commit-graph-title">Henok-Tekeba</h2>
+            </div>
+          </div>
+
+          <a className="commit-graph-user" href={`https://github.com/${username}`} target="_blank" rel="noreferrer">
+            @{username}
+          </a>
         </div>
 
         <div className="commit-graph-stage" ref={stageRef}>
@@ -141,6 +155,10 @@ export default function GitHubCommitGraph() {
 
           {status === 'ready' && graph && (
             <>
+              <div className="commit-graph-meta">
+                <span>{graph.totalCount} contributions in the last year</span>
+              </div>
+
               <div className="commit-graph-grid-wrap">
                 <div className="commit-graph-days" aria-hidden="true">
                   <span>Sun</span>
@@ -189,9 +207,16 @@ export default function GitHubCommitGraph() {
                   {activeCell.count} {activeCell.count === 1 ? 'contribution' : 'contributions'} on {formatDateLabel(activeCell.date)}
                 </div>
               )}
+
+              <div className="commit-graph-footer">
+                <a href={`https://github.com/${username}`} target="_blank" rel="noreferrer">
+                  View profile
+                </a>
+              </div>
             </>
           )}
         </div>
+      </div>
     </section>
   )
 }

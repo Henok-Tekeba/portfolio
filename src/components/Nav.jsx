@@ -110,7 +110,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         {isMobile && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          <aside style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
             <button
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
@@ -156,7 +156,7 @@ export default function Nav() {
                 }} />
               ))}
             </button>
-          </div>
+          </aside>
         )}
       </nav>
 

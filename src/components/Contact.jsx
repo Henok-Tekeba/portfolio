@@ -13,6 +13,56 @@ const links = [
 export default function Contact() {
   const width = useWindowSize()
   const isMobile = width < 768
+  const firstRowLinks = links.slice(0, 3)
+  const secondRowLinks = links.slice(3)
+
+  const renderContactButton = ({ label, href, Icon }) => (
+    <a
+      key={label}
+      href={href}
+      target={href.startsWith('mailto') ? '_self' : '_blank'}
+      rel="noreferrer"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0.55rem',
+        padding: '0.68rem 0.92rem',
+        border: '1px solid var(--border-2)',
+        borderRadius: '999px',
+        textDecoration: 'none',
+        transition: 'all 0.2s ease',
+        color: 'var(--text-2)',
+        background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
+        flex: '0 0 auto',
+        lineHeight: 1,
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'var(--accent)'
+        e.currentTarget.style.color = 'var(--text)'
+        e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = 'var(--border-2)'
+        e.currentTarget.style.color = 'var(--text-2)'
+        e.currentTarget.style.boxShadow = 'none'
+      }}
+      aria-label={label}
+    >
+      <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Icon size={14} />
+      </span>
+      <span style={{
+        fontFamily: 'var(--mono)',
+        fontSize: '0.62rem',
+        letterSpacing: '0.11em',
+        textTransform: 'uppercase',
+        lineHeight: 1,
+      }}>
+        {label}
+      </span>
+    </a>
+  )
 
   return (
     <section id="contact" style={{
@@ -59,62 +109,28 @@ export default function Contact() {
           Open to internships, work, and AI collaborations.
         </p>
 
-        <div className="reveal d1" style={{
-          display: 'flex',
-          flexWrap: 'nowrap',
-          gap: '0.7rem',
-          alignItems: 'center',
-          overflowX: 'auto',
-          paddingBottom: isMobile ? '0.25rem' : '0',
-        }}>
-          {links.map(({ label, href, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith('mailto') ? '_self' : '_blank'}
-              rel="noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.55rem',
-                padding: '0.68rem 0.92rem',
-                border: '1px solid var(--border-2)',
-                borderRadius: '999px',
-                textDecoration: 'none',
-                transition: 'all 0.2s ease',
-                color: 'var(--text-2)',
-                background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
-                flex: '0 0 auto',
-                lineHeight: 1,
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--accent)'
-                e.currentTarget.style.color = 'var(--text)'
-                e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--border-2)'
-                e.currentTarget.style.color = 'var(--text-2)'
-                e.currentTarget.style.boxShadow = 'none'
-              }}
-              aria-label={label}
-            >
-              <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Icon size={14} />
-              </span>
-              <span style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '0.62rem',
-                letterSpacing: '0.11em',
-                textTransform: 'uppercase',
-                lineHeight: 1,
-              }}>
-                {label}
-              </span>
-            </a>
-          ))}
-        </div>
+        {!isMobile && (
+          <div className="reveal d1" style={{
+            display: 'flex',
+            flexWrap: 'nowrap',
+            gap: '0.7rem',
+            alignItems: 'center',
+            overflowX: 'auto',
+          }}>
+            {links.map(renderContactButton)}
+          </div>
+        )}
+
+        {isMobile && (
+          <div className="reveal d1" style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.7rem', flexWrap: 'nowrap' }}>
+              {firstRowLinks.map(renderContactButton)}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.7rem', flexWrap: 'nowrap' }}>
+              {secondRowLinks.map(renderContactButton)}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
