@@ -1,4 +1,39 @@
+import { useEffect, useState } from 'react'
+import useWindowSize from '../hooks/useWindowSize'
+
+function getPresenceStatus() {
+  const hourString = new Intl.DateTimeFormat('en-US', {
+    hour: '2-digit',
+    hour12: false,
+    timeZone: 'Africa/Addis_Ababa',
+  }).format(new Date())
+
+  const hour = Number.parseInt(hourString, 10)
+
+  if (hour >= 0 && hour < 6) {
+    return { label: 'Currently Asleep', color: '#64748b' }
+  }
+
+  if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
+    return { label: 'Currently Idle', color: '#d4a853' }
+  }
+
+  return { label: 'Currently Building', color: '#3dbe76' }
+}
+
 export default function Hero() {
+  const width = useWindowSize()
+  const isMobile = width < 768
+  const [presence, setPresence] = useState(getPresenceStatus)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPresence(getPresenceStatus())
+    }, 60000)
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section id="hero" style={{
       minHeight: '100vh',
@@ -10,31 +45,73 @@ export default function Hero() {
       zIndex: 1,
     }}>
 
-      {/* Top label */}
-      <p style={{
-        fontFamily: 'var(--mono)',
-        fontSize: '0.7rem',
-        letterSpacing: '0.2em',
-        color: 'var(--text-3)',
-        textTransform: 'uppercase',
-        marginBottom: '2rem',
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: isMobile ? '1.25rem' : '1.6rem',
+        marginBottom: '1.7rem',
       }}>
-        Addis Ababa, Ethiopia — 2026
-      </p>
+        <img
+          src="public/heni.png"
+          alt="Henok Tekeba"
+          style={{
+            width: isMobile ? '122px' : '156px',
+            height: isMobile ? '122px' : '156px',
+            borderRadius: '1rem',
+            objectFit: 'cover',
+            border: '1px solid var(--border-2)',
+            boxShadow: '0 10px 28px rgba(0,0,0,0.2)',
+            flexShrink: 0,
+          }}
+        />
 
-      {/* Name */}
-      <h1 style={{
-        fontFamily: 'var(--display)',
-        fontWeight: 'var(--display-weight-thin)',
-        fontSize: 'clamp(3.5rem, 10vw, 9rem)',
-        lineHeight: 1.0,
-        letterSpacing: '-0.02em',
-        color: 'var(--text)',
-        marginBottom: '1.5rem',
-      }}>
-        Henok<br />
-        <span style={{ color: 'var(--accent)' }}>Tekeba</span>
-      </h1>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+          <h1 style={{
+            fontFamily: 'var(--display)',
+            fontWeight: 'var(--display-weight-thin)',
+            fontSize: isMobile ? 'clamp(1.8rem, 7.5vw, 2.35rem)' : 'clamp(1.9rem, 4.2vw, 3.2rem)',
+            lineHeight: 1.0,
+            letterSpacing: '-0.02em',
+            color: 'var(--text)',
+            textAlign: isMobile ? 'center' : 'left',
+            whiteSpace: 'nowrap',
+          }}>
+            Henok <span style={{ color: 'var(--accent)' }}>Tekeba</span>
+          </h1>
+
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            border: '1px solid var(--border-2)',
+            borderRadius: '999px',
+            padding: '0.4rem 0.7rem',
+            width: 'fit-content',
+            alignSelf: isMobile ? 'center' : 'flex-start',
+            background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
+          }}>
+            <span style={{
+              width: '7px',
+              height: '7px',
+              borderRadius: '50%',
+              background: presence.color,
+              boxShadow: `0 0 0 4px color-mix(in srgb, ${presence.color} 18%, transparent)`,
+              flexShrink: 0,
+            }} />
+            <span style={{
+              fontFamily: 'var(--mono)',
+              fontSize: '0.58rem',
+              letterSpacing: '0.11em',
+              textTransform: 'uppercase',
+              color: 'var(--text-2)',
+              lineHeight: 1,
+            }}>
+              {presence.label}
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Role line */}
       <div style={{
