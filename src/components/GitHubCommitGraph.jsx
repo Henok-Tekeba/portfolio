@@ -132,14 +132,20 @@ export default function GitHubCommitGraph() {
 
     const stageRect = stageRef.current.getBoundingClientRect()
     const cellRect = event.currentTarget.getBoundingClientRect()
-    const left = cellRect.left - stageRect.left + (cellRect.width / 2)
-    const top = cellRect.top - stageRect.top - 6
+    const leftRaw = cellRect.left - stageRect.left + (cellRect.width / 2)
+    const left = Math.max(26, Math.min(leftRaw, stageRect.width - 26))
+    const spaceAbove = cellRect.top - stageRect.top
+    const placeBelow = spaceAbove < 34
+    const top = placeBelow
+      ? cellRect.bottom - stageRect.top + 8
+      : cellRect.top - stageRect.top - 8
 
     setActiveCell({
       count: cell.count,
       date: cell.date,
       left,
       top,
+      placeBelow,
     })
   }
 
@@ -225,7 +231,7 @@ export default function GitHubCommitGraph() {
 
             {activeCell && (
               <div
-                className="commit-graph-tooltip-inline"
+                className={`commit-graph-tooltip-inline ${activeCell.placeBelow ? 'is-below' : ''}`}
                 role="status"
                 aria-live="polite"
                 style={{ left: `${activeCell.left}px`, top: `${activeCell.top}px` }}

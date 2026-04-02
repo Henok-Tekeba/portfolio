@@ -275,6 +275,10 @@ body::after {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
+.commit-graph-tooltip-inline.is-below {
+  transform: translate(-50%, 0%);
+}
+
 [data-theme="light"] .commit-cell {
   border-color: rgba(80, 64, 40, 0.1);
 }
@@ -438,6 +442,14 @@ body::after {
     gap: 0.55rem;
     overflow-x: auto;
     padding-bottom: 0.35rem;
+  }
+
+  .commit-graph-days {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: color-mix(in srgb, var(--bg-2) 92%, transparent);
+    padding-right: 0.25rem;
   }
 
   .commit-graph-summary {
