@@ -95,6 +95,327 @@ body::after {
 .reveal.d1 { transition-delay: 0.15s; }
 .reveal.d2 { transition-delay: 0.3s; }
 .reveal.d3 { transition-delay: 0.45s; }
+
+/* ── GITHUB COMMIT GRAPH ── */
+.commit-graph-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.commit-graph-shell {
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at top left, rgba(61, 190, 118, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(61, 190, 118, 0.08), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
+    #050505;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.46);
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.commit-graph-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.commit-graph-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.commit-graph-mark {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f2f2f2;
+}
+
+.commit-graph-mark svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.commit-graph-kicker {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 0.25rem;
+}
+
+.commit-graph-title {
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.commit-graph-user {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  padding: 0.75rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.commit-graph-user:hover {
+  color: var(--text);
+  border-color: rgba(61, 190, 118, 0.4);
+  transform: translateY(-1px);
+}
+
+.commit-graph-stage {
+  border-radius: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.006)),
+    #070707;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.commit-graph-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.commit-graph-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  position: relative;
+  z-index: 1;
+}
+
+.commit-graph-grid-wrap {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.commit-graph-days {
+  display: grid;
+  grid-template-rows: repeat(7, 12px);
+  gap: 6px;
+  padding-top: 1px;
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.commit-graph-days span {
+  display: flex;
+  align-items: center;
+  height: 12px;
+}
+
+.commit-graph-grid {
+  display: grid;
+  grid-template-rows: repeat(7, 12px);
+  gap: 6px;
+  align-content: start;
+}
+
+.commit-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.16);
+}
+
+.commit-cell.intensity-0 { background: #0b0b0b; }
+.commit-cell.intensity-1 { background: #122117; }
+.commit-cell.intensity-2 { background: #173824; }
+.commit-cell.intensity-3 { background: #1e5a38; }
+.commit-cell.intensity-4 { background: #3dbe76; box-shadow: 0 0 14px rgba(61, 190, 118, 0.16); }
+
+.commit-graph-state {
+  min-height: 10rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  color: var(--text-2);
+  background: rgba(255, 255, 255, 0.02);
+  font-family: var(--mono);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.commit-graph-state a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.commit-graph-state a:hover {
+  color: var(--text);
+}
+
+.commit-graph-tooltip {
+  margin-top: 0.9rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.65rem;
+  width: fit-content;
+  border: 1px solid rgba(61, 190, 118, 0.35);
+  background: rgba(7, 20, 12, 0.92);
+  color: #9cf6be;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.commit-graph-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+  font-size: 0.88rem;
+  color: var(--text-2);
+}
+
+.commit-graph-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.commit-graph-footer a:hover {
+  color: var(--text);
+}
+
+/* ── SKILLS MARQUEE ── */
+.skills-marquee-shell {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.skills-marquee-rail {
+  overflow: hidden;
+}
+
+.skills-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding: 1.25rem;
+  will-change: transform;
+  animation: skills-marquee 58s linear infinite;
+}
+
+.skills-marquee-shell:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+.skills-card {
+  flex: 0 0 auto;
+  min-width: 190px;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--border-2);
+  border-radius: 1.1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(212, 168, 83, 0.12), rgba(255, 255, 255, 0.02));
+}
+
+.skills-card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.skills-card-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.skills-card-copy {
+  min-width: 0;
+}
+
+.skills-card-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.skills-card-category {
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+@keyframes skills-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   /* Nav */
@@ -114,6 +435,51 @@ body::after {
   /* All sections */
   section {
     padding: 5rem 1.5rem !important;
+  }
+
+  .commit-graph-section {
+    padding: 0 1.5rem 4rem !important;
+  }
+
+  .commit-graph-shell {
+    padding: 1.1rem;
+    border-radius: 1.2rem;
+  }
+
+  .commit-graph-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .commit-graph-user {
+    width: 100%;
+    text-align: center;
+  }
+
+  .commit-graph-grid-wrap {
+    grid-template-columns: 2rem 1fr;
+    gap: 0.7rem;
+  }
+
+  .commit-graph-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .commit-graph-grid {
+    gap: 5px;
+  }
+
+  .commit-cell {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+  }
+
+  .commit-graph-axis,
+  .commit-graph-footer {
+    font-size: 0.58rem;
+    flex-wrap: wrap;
   }
 
   /* Two column grids → single column */
@@ -137,16 +503,15 @@ body::after {
     gap: 1rem !important;
   }
 
-  /* Skills grid */
-  div[style*="grid-template-columns: repeat(3, 1fr)"] {
-    display: flex !important;
-    flex-direction: column !important;
+  .skills-marquee-track {
+    gap: 0.85rem;
+    padding: 1rem;
+    animation-duration: 72s;
   }
 
-  /* Skills cell borders */
-  div[style*="borderRight"] {
-    border-right: none !important;
-    border-bottom: 1px solid var(--border) !important;
+  .skills-card {
+    min-width: 170px;
+    padding: 1rem;
   }
 
   /* Footer */

@@ -1,21 +1,67 @@
-import useWindowSize from '../hooks/useWindowSize'
+import {
+  SiGithub,
+  SiGnubash,
+  SiGit,
+  SiGooglecolab,
+  SiHuggingface,
+  SiJavascript,
+  SiKaggle,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenai,
+  SiOpenjdk,
+  SiExpress,
+  SiPostgresql,
+  SiPytorch,
+  SiPython,
+  SiLinux,
+  SiRailway,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiWeightsandbiases,
+} from 'react-icons/si'
+import {
+  FaCubes,
+  FaMicrophone,
+  FaNetworkWired,
+  FaSlidersH,
+  FaWaveSquare,
+} from 'react-icons/fa'
 
-const skillGroups = [
-  { cat: 'Languages', skills: ['Python', 'TypeScript', 'JavaScript', 'Java'] },
-  { cat: 'Frontend', skills: ['Next.js', 'React', 'Tailwind CSS'] },
-  { cat: 'Backend', skills: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs'] },
-  { cat: 'Machine Learning', skills: ['PyTorch', 'HuggingFace', 'Whisper', 'LoRA Fine tuning', 'XTTSv2'] },
-  { cat: 'MLOps & Infra', skills: ['Kaggle','Google Collab', 'wandb', 'Railway'] },
-  { cat: 'Tools', skills: ['Git', 'GitHub', 'Linux', 'Bash'] },
+const skillItems = [
+  { name: 'Python', category: 'Language', Icon: SiPython, color: '#3776AB' },
+  { name: 'TypeScript', category: 'Language', Icon: SiTypescript, color: '#3178C6' },
+  { name: 'JavaScript', category: 'Language', Icon: SiJavascript, color: '#F7DF1E' },
+  { name: 'Java', category: 'Language', Icon: SiOpenjdk, color: '#E76F00' },
+  { name: 'Next.js', category: 'Frontend', Icon: SiNextdotjs, color: '#F5F5F5' },
+  { name: 'React', category: 'Frontend', Icon: SiReact, color: '#61DAFB' },
+  { name: 'Tailwind CSS', category: 'Frontend', Icon: SiTailwindcss, color: '#38BDF8' },
+  { name: 'Node.js', category: 'Backend', Icon: SiNodedotjs, color: '#339933' },
+  { name: 'Express', category: 'Backend', Icon: SiExpress, color: '#B3B3B3' },
+  { name: 'PostgreSQL', category: 'Backend', Icon: SiPostgresql, color: '#336791' },
+  { name: 'REST APIs', category: 'Backend', Icon: FaNetworkWired, color: '#D4A853' },
+  { name: 'PyTorch', category: 'ML', Icon: SiPytorch, color: '#EE4C2C' },
+  { name: 'HuggingFace', category: 'ML', Icon: SiHuggingface, color: '#FFD21E' },
+  { name: 'Whisper', category: 'ML', Icon: SiOpenai, color: '#412991' },
+  { name: 'LoRA Fine tuning', category: 'ML', Icon: FaSlidersH, color: '#D4A853' },
+  { name: 'XTTSv2', category: 'ML', Icon: FaWaveSquare, color: '#3DBE76' },
+  { name: 'Kaggle', category: 'MLOps', Icon: SiKaggle, color: '#20BEFF' },
+  { name: 'Google Colab', category: 'MLOps', Icon: SiGooglecolab, color: '#F9AB00' },
+  { name: 'wandb', category: 'MLOps', Icon: SiWeightsandbiases, color: '#FFCC00' },
+  { name: 'Railway', category: 'MLOps', Icon: SiRailway, color: '#0B0D0E' },
+  { name: 'Git', category: 'Tools', Icon: SiGit, color: '#F05032' },
+  { name: 'GitHub', category: 'Tools', Icon: SiGithub, color: '#F5F5F5' },
+  { name: 'Linux', category: 'Tools', Icon: SiLinux, color: '#FCC624' },
+  { name: 'Bash', category: 'Tools', Icon: SiGnubash, color: '#4EAA25' },
 ]
 
-export default function Skills() {
-  const width = useWindowSize()
-  const isMobile = width < 768
+const marqueeSkills = [...skillItems, ...skillItems]
 
+export default function Skills() {
   return (
     <section id="skills" style={{
-      padding: isMobile ? '5rem 1.5rem' : '8rem 3rem',
+      padding: '8rem 3rem',
       position: 'relative',
       zIndex: 1,
       borderTop: '1px solid var(--border)',
@@ -34,47 +80,31 @@ export default function Skills() {
         <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
       </div>
 
-      <div className="reveal d1" style={{
-        display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-        gap: '0',
-        border: '1px solid var(--border)',
-      }}>
-        {skillGroups.map((group, i) => (
-          <div key={i} style={{
-            padding: '2rem',
-            borderRight: !isMobile && i % 3 !== 2 ? '1px solid var(--border)' : 'none',
-            borderBottom: isMobile && i < skillGroups.length - 1
-              ? '1px solid var(--border)'
-              : !isMobile && i < 3 ? '1px solid var(--border)' : 'none',
-          }}>
-            <p style={{
-              fontFamily: 'var(--mono)',
-              fontSize: '0.6rem',
-              letterSpacing: '0.15em',
-              color: 'var(--accent)',
-              textTransform: 'uppercase',
-              marginBottom: '1.25rem',
-            }}>{group.cat}</p>
+      <div className="reveal d1 skills-marquee-shell">
+        <div className="skills-marquee-rail">
+          <div className="skills-marquee-track">
+            {marqueeSkills.map((skill, index) => {
+              const isDuplicate = index >= skillItems.length
+              const Icon = skill.Icon
 
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {group.skills.map(skill => (
-                <li key={skill} style={{
-                  fontFamily: 'var(--display)',
-                  fontWeight: 'var(--display-weight-light)',
-                  fontSize: '0.95rem',
-                  color: 'var(--text-2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                }}>
-                  <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--text-3)', flexShrink: 0 }} />
-                  {skill}
-                </li>
-              ))}
-            </ul>
+              return (
+                <article
+                  key={`${skill.name}-${index}`}
+                  className="skills-card"
+                  aria-hidden={isDuplicate}
+                >
+                  <div className="skills-card-icon" style={{ color: skill.color }}>
+                    <Icon aria-hidden="true" focusable="false" />
+                  </div>
+                  <div className="skills-card-copy">
+                    <p className="skills-card-name">{skill.name}</p>
+                    <p className="skills-card-category">{skill.category}</p>
+                  </div>
+                </article>
+              )
+            })}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   )
