@@ -22,21 +22,6 @@ function formatDateLabel(dateString) {
   })
 }
 
-function contributionColor(level) {
-  switch (level) {
-    case 1:
-      return '#14311f'
-    case 2:
-      return '#1d5c36'
-    case 3:
-      return '#2ea043'
-    case 4:
-      return '#7ee787'
-    default:
-      return '#0c0c0c'
-  }
-}
-
 export default function GitHubCommitGraph() {
   const width = useWindowSize()
   const isMobile = width < 768
@@ -198,7 +183,6 @@ export default function GitHubCommitGraph() {
                       style={{
                         gridColumn: cell.column + 1,
                         gridRow: cell.row + 1,
-                        background: contributionColor(cell.level),
                       }}
                       title={cell.label}
                       aria-label={cell.label}
