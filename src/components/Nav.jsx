@@ -7,7 +7,7 @@ const links = ['about', 'experience', 'projects', 'skills', 'contact']
 export default function Nav() {
   const [sticky, setSticky] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
   const width = useWindowSize()
   const isMobile = width < 768
 
@@ -25,7 +25,8 @@ export default function Nav() {
       return
     }
 
-    document.documentElement.setAttribute('data-theme', 'dark')
+    localStorage.setItem('theme', 'light')
+    document.documentElement.setAttribute('data-theme', 'light')
   }, [])
 
   const toggleTheme = () => {
@@ -109,33 +110,53 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         {isMobile && (
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '5px',
-              padding: '4px',
-            }}
-          >
-            {[0, 1, 2].map(i => (
-              <span key={i} style={{
-                display: 'block',
-                width: '22px',
-                height: '1px',
-                background: menuOpen && i === 1 ? 'transparent' : 'var(--accent)',
-                transform: menuOpen
-                  ? i === 0 ? 'rotate(45deg) translate(4px, 4px)'
-                  : i === 2 ? 'rotate(-45deg) translate(4px, -4px)'
-                  : 'none'
-                  : 'none',
-                transition: 'all 0.3s ease',
-              }} />
-            ))}
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <button
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              style={{
+                border: '1px solid var(--border-2)',
+                background: 'transparent',
+                color: 'var(--text-2)',
+                width: '2.2rem',
+                height: '2.2rem',
+                borderRadius: '999px',
+                cursor: 'pointer',
+                display: 'grid',
+                placeItems: 'center',
+              }}
+            >
+              {theme === 'dark' ? <FaSun size={13} /> : <FaMoon size={13} />}
+            </button>
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '5px',
+                padding: '4px',
+              }}
+            >
+              {[0, 1, 2].map(i => (
+                <span key={i} style={{
+                  display: 'block',
+                  width: '22px',
+                  height: '1px',
+                  background: menuOpen && i === 1 ? 'transparent' : 'var(--accent)',
+                  transform: menuOpen
+                    ? i === 0 ? 'rotate(45deg) translate(4px, 4px)'
+                    : i === 2 ? 'rotate(-45deg) translate(4px, -4px)'
+                    : 'none'
+                    : 'none',
+                  transition: 'all 0.3s ease',
+                }} />
+              ))}
+            </button>
+          </div>
         )}
       </nav>
 
@@ -172,23 +193,6 @@ export default function Nav() {
             </a>
           ))}
 
-          <button
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            style={{
-              border: '1px solid var(--border-2)',
-              background: 'transparent',
-              color: 'var(--text-2)',
-              width: '2.4rem',
-              height: '2.4rem',
-              borderRadius: '999px',
-              cursor: 'pointer',
-              display: 'grid',
-              placeItems: 'center',
-            }}
-          >
-            {theme === 'dark' ? <FaSun size={14} /> : <FaMoon size={14} />}
-          </button>
         </div>
       )}
     </>

@@ -1,18 +1,14 @@
 import useWindowSize from '../hooks/useWindowSize'
+import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
+import { FaEnvelope, FaLinkedinIn } from 'react-icons/fa'
 
 const links = [
-  { label: 'Email', value: 'tekebahenok6@gmail.com', href: 'mailto:tekebahenok6@gmail.com' },
-  { label: 'GitHub', value: '@Henok-Tekeba', href: 'https://github.com/Henok-Tekeba' },
-  { label: 'HuggingFace', value: 'Henokk', href: 'https://huggingface.co/Henokk' },
-  { label: 'X (Twitter)', value: '@Henok_Tekeba', href: 'https://x.com/HenaTeke' },
-  { label: 'LinkedIn', value: 'Henok Tekeba', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?' },
+  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', Icon: FaEnvelope },
+  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: SiGithub },
+  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: SiHuggingface },
+  { label: 'X', href: 'https://x.com/HenaTeke', Icon: SiX },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?', Icon: FaLinkedinIn },
 ]
-
-const ArrowIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M7 17L17 7M17 7H7M17 7v10" />
-  </svg>
-)
 
 export default function Contact() {
   const width = useWindowSize()
@@ -39,65 +35,82 @@ export default function Contact() {
         <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-        gap: isMobile ? '3rem' : '6rem',
-        alignItems: 'start',
-      }}>
-        <div>
-          <h2 className="reveal" style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-thin)',
-            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-            lineHeight: 1.1,
-            color: 'var(--text)',
-            marginBottom: '1.5rem',
-          }}>
-            Let's build<br />
-            <span style={{ color: 'var(--accent)' }}>something.</span>
-          </h2>
-          <p className="reveal d1" style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '1rem',
-            color: 'var(--text-2)',
-            lineHeight: 1.8,
-          }}>
-            Open to work, internships, and research collaborations.
-            If you're working on something meaningful in AI or systems, I'd love to talk.
-          </p>
-        </div>
+      <div>
+        <h2 className="reveal" style={{
+          fontFamily: 'var(--display)',
+          fontWeight: 'var(--display-weight-thin)',
+          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+          lineHeight: 1.1,
+          color: 'var(--text)',
+          marginBottom: '1.2rem',
+        }}>
+          Let's build<br />
+          <span style={{ color: 'var(--accent)' }}>something.</span>
+        </h2>
 
-        <div className="reveal d1">
-          {links.map(({ label, value, href }) => (
+        <p className="reveal d1" style={{
+          fontFamily: 'var(--display)',
+          fontWeight: 'var(--display-weight-light)',
+          fontSize: '1rem',
+          color: 'var(--text-2)',
+          lineHeight: 1.8,
+          marginBottom: '1.6rem',
+        }}>
+          Open to internships, work, and AI collaborations.
+        </p>
+
+        <div className="reveal d1" style={{
+          display: 'flex',
+          flexWrap: 'nowrap',
+          gap: '0.7rem',
+          alignItems: 'center',
+          overflowX: 'auto',
+          paddingBottom: isMobile ? '0.25rem' : '0',
+        }}>
+          {links.map(({ label, href, Icon }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith('mailto') ? '_self' : '_blank'}
               rel="noreferrer"
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
+                display: 'inline-flex',
                 alignItems: 'center',
-                padding: '1rem 0',
-                borderBottom: '1px solid var(--border)',
+                justifyContent: 'center',
+                gap: '0.55rem',
+                padding: '0.68rem 0.92rem',
+                border: '1px solid var(--border-2)',
+                borderRadius: '999px',
                 textDecoration: 'none',
-                transition: 'all 0.2s',
-                color: 'inherit',
+                transition: 'all 0.2s ease',
+                color: 'var(--text-2)',
+                background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
+                flex: '0 0 auto',
+                lineHeight: 1,
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.paddingLeft = '0.5rem'
                 e.currentTarget.style.borderColor = 'var(--accent)'
+                e.currentTarget.style.color = 'var(--text)'
+                e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.paddingLeft = '0'
-                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.borderColor = 'var(--border-2)'
+                e.currentTarget.style.color = 'var(--text-2)'
+                e.currentTarget.style.boxShadow = 'none'
               }}
+              aria-label={label}
             >
-              <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'var(--text-3)', textTransform: 'uppercase' }}>{label}</span>
-              <span style={{ fontFamily: 'var(--display)', fontWeight: 'var(--display-weight-light)', fontSize: '0.9rem', color: 'var(--text-2)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                {value} <ArrowIcon />
+              <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Icon size={14} />
+              </span>
+              <span style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.62rem',
+                letterSpacing: '0.11em',
+                textTransform: 'uppercase',
+                lineHeight: 1,
+              }}>
+                {label}
               </span>
             </a>
           ))}

@@ -51,7 +51,7 @@ export default function Hero() {
           color: 'var(--text-2)',
           textTransform: 'uppercase',
         }}>
-          AI Engineer · Full Stack Developer · voiET Founder
+          AI Engineer · Full Stack Developer
         </p>
       </div>
 
@@ -65,9 +65,7 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        Building Amharic voice AI for Ethiopian banks and telecoms.
-        ECE student at Addis Ababa University.
-        Making Ethiopia's AI future from Addis.
+        Building Amharic voice AI for Ethiopian banks and telecoms, while studying ECE at Addis Ababa University.
       </p>
 
       {/* CTA buttons */}

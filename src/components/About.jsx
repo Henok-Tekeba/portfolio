@@ -46,9 +46,8 @@ export default function About() {
             color: 'var(--text)',
             marginBottom: '2rem',
           }}>
-            Building the infrastructure<br />
-            <span style={{ color: 'var(--accent)' }}>Ethiopia's AI future</span><br />
-            needs.
+            Building practical
+            <span style={{ color: 'var(--accent)' }}> Amharic AI systems.</span>
           </h2>
 
           <p className="reveal d1" style={{
@@ -59,9 +58,7 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            I'm a second year Electrical and Computer Engineering student at
-            Addis Ababa University, and the founder of voiET an Amharic
-            voice AI startup targeting Ethiopian banks and telecoms.
+            Second-year ECE student at Addis Ababa University and founder of voiET, focused on Amharic voice AI.
           </p>
 
           <p className="reveal d2" style={{
@@ -71,10 +68,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            My work sits at the intersection of full-stack engineering and
-            machine learning fine tuning AI models for better Amharic AI products , building
-            TTS pipelines, and shipping production systems that actually work
-            for Ethiopian users.
+            I work across model fine-tuning, TTS pipelines, and full-stack product delivery for Ethiopian users.
           </p>
         </div>
 
@@ -82,10 +76,7 @@ export default function About() {
           {[
             { label: 'Location', value: 'Addis Ababa, Ethiopia' },
             { label: 'University', value: 'Addis Ababa University' },
-            { label: 'Degree', value: 'BSc Electrical & Computer Engineering' },
-            { label: 'Year', value: 'Second Year' },
             { label: 'Startup', value: 'voiET, Amharic Voice AI' },
-            { label: 'HuggingFace', value: 'Henokk' },
             { label: 'Status', value: 'Open to internships & collaborations' },
           ].map(({ label, value }) => (
             <div key={label} style={{

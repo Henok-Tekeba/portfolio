@@ -25,7 +25,7 @@ export default function Footer() {
         letterSpacing: '0.1em',
         color: 'var(--text-3)',
       }}>
-        Addis Ababa, Ethiopia <span style={{ color: 'var(--accent)' }}></span> voiET Founder
+        Addis Ababa, Ethiopia
       </p>
     </footer>
   )
