@@ -190,7 +190,11 @@ export default function GitHubCommitGraph() {
               </div>
 
               <div className="commit-graph-board">
-                <div className="commit-graph-months" aria-hidden="true">
+                <div
+                  className="commit-graph-months"
+                  aria-hidden="true"
+                  style={{ gridTemplateColumns: `repeat(${graph.totalWeeks}, minmax(0, 1fr))` }}
+                >
                   {graph.monthLabels.map(month => (
                     <span
                       key={`${month.label}-${month.column}`}
@@ -203,7 +207,7 @@ export default function GitHubCommitGraph() {
 
                 <div
                   className="commit-graph-grid"
-                  style={{ gridTemplateColumns: `repeat(${graph.totalWeeks}, var(--commit-cell-size))` }}
+                  style={{ gridTemplateColumns: `repeat(${graph.totalWeeks}, minmax(0, 1fr))` }}
                   role="img"
                   aria-label={`GitHub contribution heatmap for ${username}`}
                 >

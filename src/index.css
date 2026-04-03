@@ -27,9 +27,9 @@
   --mono:      'Geist Pixel', monospace;
   --title:     'Geist Pixel', monospace;
   --display:   'Geist Pixel', monospace;
-  --display-weight-light: 200;
-  --display-weight-thin:  100;
-  --display-weight-reg:   300;
+  --display-weight-light: 400;
+  --display-weight-thin:  400;
+  --display-weight-reg:   400;
 }
 
 [data-theme="light"] {
@@ -48,33 +48,33 @@
 
 [data-font="cormorant"] {
   --display: 'Geist Pixel', monospace;
-  --display-weight-light: 300;
-  --display-weight-thin:  300;
+  --display-weight-light: 400;
+  --display-weight-thin:  400;
   --display-weight-reg:   400;
 }
 [data-font="josefin"] {
   --display: 'Geist Pixel', monospace;
-  --display-weight-light: 100;
-  --display-weight-thin:  100;
-  --display-weight-reg:   200;
+  --display-weight-light: 400;
+  --display-weight-thin:  400;
+  --display-weight-reg:   400;
 }
 [data-font="outfit"] {
   --display: 'Geist Pixel', monospace;
-  --display-weight-light: 200;
-  --display-weight-thin:  100;
-  --display-weight-reg:   300;
+  --display-weight-light: 400;
+  --display-weight-thin:  400;
+  --display-weight-reg:   400;
 }
 [data-font="jakarta"] {
   --display: 'Geist Pixel', monospace;
-  --display-weight-light: 200;
-  --display-weight-thin:  200;
-  --display-weight-reg:   300;
+  --display-weight-light: 400;
+  --display-weight-thin:  400;
+  --display-weight-reg:   400;
 }
 [data-font="raleway"] {
   --display: 'Geist Pixel', monospace;
-  --display-weight-light: 100;
-  --display-weight-thin:  100;
-  --display-weight-reg:   200;
+  --display-weight-light: 400;
+  --display-weight-thin:  400;
+  --display-weight-reg:   400;
 }
 
 html { scroll-behavior: smooth; }
@@ -92,6 +92,10 @@ body {
   overflow-x: hidden;
   cursor: auto;
   transition: font-family 0.4s ease;
+}
+
+body, p, span, a, button, input, textarea, select, li, label {
+  font-family: 'Geist Pixel', monospace;
 }
 
 body::after {
@@ -188,6 +192,9 @@ body::after {
   justify-content: space-between;
   gap: 1.25rem;
   margin: 0 0 0.9rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .commit-graph-title {
@@ -210,6 +217,9 @@ body::after {
 .commit-graph-stage {
   position: relative;
   overflow: visible;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .commit-graph-grid-wrap {
@@ -250,7 +260,8 @@ body::after {
 }
 
 .commit-graph-board {
-  min-width: max-content;
+  min-width: 0;
+  width: 100%;
 }
 
 .commit-graph-months {
@@ -269,8 +280,9 @@ body::after {
   padding: 0;
   margin: 0;
   background: transparent;
-  width: var(--commit-cell-size);
-  height: var(--commit-cell-size);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border-radius: 2px;
   border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
   box-shadow: none;
@@ -377,16 +389,16 @@ body::after {
 /* ── SKILLS GRID ── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .skills-card {
   min-width: 0;
-  aspect-ratio: 1 / 1;
-  padding: 0.75rem;
+  aspect-ratio: 0.92 / 1;
+  padding: 0.5rem;
   border: 1px solid var(--border-2);
-  border-radius: 0.85rem;
+  border-radius: 0.75rem;
   background: color-mix(in srgb, var(--bg-2) 92%, transparent);
   display: grid;
   place-items: center;
@@ -414,8 +426,8 @@ body::after {
 }
 
 .skills-card-icon svg {
-  width: 1.65rem;
-  height: 1.65rem;
+  width: 2.05rem;
+  height: 2.05rem;
 }
 
 .skills-card:hover .skills-card-icon {

@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const root = document.documentElement
     const observer = new MutationObserver(() => {
-      setTheme(root.getAttribute('data-theme') || 'light')
+      setTheme(root.getAttribute('data-theme') || 'dark')
     })
 
     observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] })
