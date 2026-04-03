@@ -67,7 +67,7 @@ export default function Hero() {
 
   return (
     <section id="hero" style={{
-      minHeight: isMobile ? '84vh' : '88vh',
+      minHeight: isMobile ? '76vh' : '81vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -167,6 +167,32 @@ export default function Hero() {
       }}>
         I am a developer in Addis Ababa building practical Amharic AI tools while studying Electrical and Computer Engineering at AAU.
       </p>
+
+      <figure style={{
+        maxWidth: '1000px',
+        marginTop: '0.2rem',
+      }}>
+        <blockquote style={{
+          fontFamily: 'var(--title)',
+          fontSize: isMobile ? 'clamp(1.5rem, 9vw, 2.4rem)' : 'clamp(2.3rem, 6vw, 4.8rem)',
+          lineHeight: 0.95,
+          letterSpacing: '0.02em',
+          color: 'var(--text)',
+          textTransform: 'uppercase',
+        }}>
+          "never tell me the odds"
+        </blockquote>
+        <figcaption style={{
+          marginTop: '0.6rem',
+          fontFamily: 'var(--mono)',
+          fontSize: '0.58rem',
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          color: 'var(--text-3)',
+        }}>
+          by Jeff Bezos
+        </figcaption>
+      </figure>
 
     </section>
   )

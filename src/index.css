@@ -24,9 +24,9 @@
   --accent:    #d4a853;
   --accent-2:  #b8892e;
   --green:     #3dbe76;
-  --mono:      'DM Mono', monospace;
+  --mono:      'Geist Pixel', monospace;
   --title:     'Geist Pixel', monospace;
-  --display:   'Outfit', sans-serif;
+  --display:   'Geist Pixel', monospace;
   --display-weight-light: 200;
   --display-weight-thin:  100;
   --display-weight-reg:   300;
@@ -47,31 +47,31 @@
 }
 
 [data-font="cormorant"] {
-  --display: 'Cormorant', serif;
+  --display: 'Geist Pixel', monospace;
   --display-weight-light: 300;
   --display-weight-thin:  300;
   --display-weight-reg:   400;
 }
 [data-font="josefin"] {
-  --display: 'Josefin Sans', sans-serif;
+  --display: 'Geist Pixel', monospace;
   --display-weight-light: 100;
   --display-weight-thin:  100;
   --display-weight-reg:   200;
 }
 [data-font="outfit"] {
-  --display: 'Outfit', sans-serif;
+  --display: 'Geist Pixel', monospace;
   --display-weight-light: 200;
   --display-weight-thin:  100;
   --display-weight-reg:   300;
 }
 [data-font="jakarta"] {
-  --display: 'Plus Jakarta Sans', sans-serif;
+  --display: 'Geist Pixel', monospace;
   --display-weight-light: 200;
   --display-weight-thin:  200;
   --display-weight-reg:   300;
 }
 [data-font="raleway"] {
-  --display: 'Raleway', sans-serif;
+  --display: 'Geist Pixel', monospace;
   --display-weight-light: 100;
   --display-weight-thin:  100;
   --display-weight-reg:   200;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--display);
+  font-family: var(--title);
   font-weight: var(--display-weight-reg);
   line-height: 1.6;
   overflow-x: hidden;
@@ -128,19 +128,27 @@ body::after {
 .reveal.d3 { transition-delay: 0.45s; }
 
 .section-divider {
-  height: 18px;
+  height: 24px;
   width: 100%;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin: 0.35rem 0;
+  margin: 0.5rem 0;
   background-image: repeating-linear-gradient(
     -45deg,
-    color-mix(in srgb, var(--text-3) 9%, transparent) 0,
-    color-mix(in srgb, var(--text-3) 9%, transparent) 1px,
+    color-mix(in srgb, var(--text-3) 13%, transparent) 0,
+    color-mix(in srgb, var(--text-3) 13%, transparent) 1px,
     transparent 1px,
-    transparent 11px
+    transparent 6px
   );
-  opacity: 0.55;
+  opacity: 0.72;
+}
+
+.section-divider + section {
+  padding-top: 5.5rem !important;
+}
+
+.section-divider + section#about {
+  padding-top: 3.5rem !important;
 }
 
 .section-heading {
@@ -169,7 +177,7 @@ body::after {
 
 /* ── GITHUB COMMIT GRAPH ── */
 .commit-graph-section {
-  padding: 2rem 3rem 4rem;
+  padding: 5.5rem 3rem 4rem;
   position: relative;
   z-index: 1;
 }
@@ -506,6 +514,14 @@ body::after {
 
   .section-heading-title {
     font-size: clamp(1.15rem, 6vw, 1.55rem);
+  }
+
+  .section-divider + section {
+    padding-top: 4rem !important;
+  }
+
+  .section-divider + section#about {
+    padding-top: 2.4rem !important;
   }
 
   .skills-card {
