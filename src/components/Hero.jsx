@@ -89,7 +89,7 @@ export default function Hero() {
           style={{
             width: isMobile ? '74px' : '116px',
             height: isMobile ? '74px' : '116px',
-            borderRadius: 0,
+            borderRadius: '1rem',
             objectFit: 'cover',
             border: '1px solid var(--border-2)',
             boxShadow: '0 10px 28px rgba(0,0,0,0.2)',
