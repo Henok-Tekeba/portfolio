@@ -1,3 +1,5 @@
+import { GraduationCap, MapPin, Sparkles } from 'lucide-react'
+
 export default function About() {
   return (
     <section id="about" style={{
@@ -46,8 +48,8 @@ export default function About() {
             color: 'var(--text)',
             marginBottom: '2rem',
           }}>
-            Building practical
-            <span style={{ color: 'var(--accent)' }}> Amharic AI systems.</span>
+            Portfolio of an
+            <span style={{ color: 'var(--accent)' }}> Ethiopian AI engineer.</span>
           </h2>
 
           <p className="reveal d1" style={{
@@ -58,7 +60,7 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            Second-year ECE student at Addis Ababa University and founder of voiET, focused on Amharic voice AI.
+            I am a second-year ECE student at Addis Ababa University and founder of voiET, focused on practical Amharic voice AI.
           </p>
 
           <p className="reveal d2" style={{
@@ -68,18 +70,17 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            I work across model fine-tuning, TTS pipelines, and full-stack product delivery for Ethiopian users.
+            This work spans model fine-tuning, speech pipelines, and full-stack delivery for teams in Ethiopia.
           </p>
         </div>
 
         <div className="reveal d1" style={{ paddingTop: '0.5rem' }}>
           {[
-            { label: 'Location', value: 'Addis Ababa, Ethiopia' },
-            { label: 'University', value: 'Addis Ababa University' },
-            { label: 'Startup', value: 'voiET, Amharic Voice AI' },
-            { label: 'Status', value: 'Open to internships & collaborations' },
-          ].map(({ label, value }) => (
-            <div key={label} style={{
+            { key: 'location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
+            { key: 'university', value: 'Addis Ababa University', Icon: GraduationCap },
+            { key: 'status', value: 'Open to internships & collaborations', Icon: Sparkles },
+          ].map(({ key, value, Icon }) => (
+            <div key={key} style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'baseline',
@@ -87,14 +88,9 @@ export default function About() {
               borderBottom: '1px solid var(--border)',
               gap: '2rem',
             }}>
-              <span style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '0.65rem',
-                letterSpacing: '0.1em',
-                color: 'var(--text-3)',
-                textTransform: 'uppercase',
-                whiteSpace: 'nowrap',
-              }}>{label}</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', color: 'var(--text-3)' }}>
+                <Icon size={15} strokeWidth={1.5} aria-hidden="true" />
+              </span>
               <span style={{
                 fontFamily: 'var(--display)',
                 fontWeight: 'var(--display-weight-light)',

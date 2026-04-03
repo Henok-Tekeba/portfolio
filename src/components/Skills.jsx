@@ -57,8 +57,6 @@ export default function Skills() {
       position: 'relative',
       zIndex: 1,
       borderTop: '1px solid var(--border)',
-      maxWidth: '1100px',
-      margin: '0 auto',
     }}>
 
       <div className="reveal" style={{

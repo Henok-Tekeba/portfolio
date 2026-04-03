@@ -32,12 +32,18 @@ export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
   const [headlineIndex, setHeadlineIndex] = useState(0)
+  const [isHeadlineVisible, setIsHeadlineVisible] = useState(true)
   const [isLiveDotOn, setIsLiveDotOn] = useState(true)
   const [presence, setPresence] = useState(getPresenceStatus)
 
   useEffect(() => {
     const headlineTimer = setInterval(() => {
-      setHeadlineIndex(prev => (prev + 1) % rotatingHeadlines.length)
+      setIsHeadlineVisible(false)
+
+      setTimeout(() => {
+        setHeadlineIndex(prev => (prev + 1) % rotatingHeadlines.length)
+        setIsHeadlineVisible(true)
+      }, 220)
     }, 2500)
 
     return () => clearInterval(headlineTimer)
@@ -111,6 +117,9 @@ export default function Hero() {
             textTransform: 'uppercase',
             color: 'var(--text-2)',
             minHeight: '1.1rem',
+            opacity: isHeadlineVisible ? 1 : 0,
+            transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
+            transition: 'opacity 0.22s ease, transform 0.22s ease',
           }}>
             {rotatingHeadlines[headlineIndex]}
           </p>
@@ -156,7 +165,7 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        Building Amharic voice AI for Ethiopian banks and telecoms, while studying ECE at Addis Ababa University.
+        Ethiopia-based developer portfolio. I build Amharic AI products for local users while studying ECE at Addis Ababa University.
       </p>
 
       {/* CTA buttons */}
