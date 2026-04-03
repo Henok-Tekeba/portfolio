@@ -80,7 +80,7 @@ export default function Experience() {
                 flexWrap: 'wrap',
               }}>
                 <h3 style={{
-                  fontFamily: 'var(--display)',
+                  fontFamily: 'var(--title)',
                   fontWeight: 'var(--display-weight-reg)',
                   fontSize: '1.1rem',
                   color: 'var(--text)',

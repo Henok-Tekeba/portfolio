@@ -39,7 +39,7 @@ export default function About() {
       }}>
         <div>
           <h2 className="reveal" style={{
-            fontFamily: 'var(--display)',
+            fontFamily: 'var(--title)',
             fontWeight: 'var(--display-weight-light)',
             fontSize: 'clamp(2rem, 4vw, 3rem)',
             lineHeight: 1.2,

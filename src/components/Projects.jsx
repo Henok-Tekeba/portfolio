@@ -100,7 +100,7 @@ export default function Projects() {
           >
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem', flexWrap: 'wrap' }}>
               <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.1em' }}>{p.num}</span>
-              <h3 style={{ fontFamily: 'var(--display)', fontWeight: 'var(--display-weight-reg)', fontSize: '1.2rem', color: 'var(--text)' }}>{p.name}</h3>
+              <h3 style={{ fontFamily: 'var(--title)', fontWeight: 'var(--display-weight-reg)', fontSize: '1.2rem', color: 'var(--text)' }}>{p.name}</h3>
               <span style={{
                 fontFamily: 'var(--mono)',
                 fontSize: '0.6rem',

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Geist Pixel';
+  src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -17,6 +25,7 @@
   --accent-2:  #b8892e;
   --green:     #3dbe76;
   --mono:      'DM Mono', monospace;
+  --title:     'Geist Pixel', monospace;
   --display:   'Outfit', sans-serif;
   --display-weight-light: 200;
   --display-weight-thin:  100;
@@ -69,6 +78,10 @@
 }
 
 html { scroll-behavior: smooth; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title);
+}
 
 body {
   background: var(--bg);
@@ -128,6 +141,7 @@ body::after {
 }
 
 .commit-graph-title {
+  font-family: var(--title);
   font-size: clamp(1.1rem, 1.7vw, 1.35rem);
   line-height: 1.1;
   color: var(--text);

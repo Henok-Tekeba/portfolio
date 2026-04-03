@@ -68,7 +68,7 @@ export default function Hero() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
           <h1 style={{
-            fontFamily: 'var(--display)',
+            fontFamily: 'var(--title)',
             fontWeight: 'var(--display-weight-thin)',
             fontSize: isMobile ? 'clamp(1.8rem, 7.5vw, 2.35rem)' : 'clamp(1.9rem, 4.2vw, 3.2rem)',
             lineHeight: 1.0,
