@@ -67,11 +67,11 @@ export default function Hero() {
 
   return (
     <section id="hero" style={{
-      minHeight: isMobile ? '76vh' : '81vh',
+      minHeight: isMobile ? '68vh' : '74vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: '0 3rem',
+      padding: isMobile ? '5.8rem 1.5rem 2rem' : '7.2rem 3rem 2rem',
       position: 'relative',
       zIndex: 1,
     }}>
@@ -87,9 +87,9 @@ export default function Hero() {
           src={`${import.meta.env.BASE_URL}heni.png`}
           alt="Henok Tekeba"
           style={{
-            width: isMobile ? '98px' : '156px',
-            height: isMobile ? '98px' : '156px',
-            borderRadius: '1rem',
+            width: isMobile ? '74px' : '116px',
+            height: isMobile ? '74px' : '116px',
+            borderRadius: 0,
             objectFit: 'cover',
             border: '1px solid var(--border-2)',
             boxShadow: '0 10px 28px rgba(0,0,0,0.2)',
@@ -167,32 +167,6 @@ export default function Hero() {
       }}>
         I am a developer in Addis Ababa building practical Amharic AI tools while studying Electrical and Computer Engineering at AAU.
       </p>
-
-      <figure style={{
-        maxWidth: '1000px',
-        marginTop: '0.2rem',
-      }}>
-        <blockquote style={{
-          fontFamily: 'var(--title)',
-          fontSize: isMobile ? 'clamp(1.5rem, 9vw, 2.4rem)' : 'clamp(2.3rem, 6vw, 4.8rem)',
-          lineHeight: 0.95,
-          letterSpacing: '0.02em',
-          color: 'var(--text)',
-          textTransform: 'uppercase',
-        }}>
-          "never tell me the odds"
-        </blockquote>
-        <figcaption style={{
-          marginTop: '0.6rem',
-          fontFamily: 'var(--mono)',
-          fontSize: '0.58rem',
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: 'var(--text-3)',
-        }}>
-          by Jeff Bezos
-        </figcaption>
-      </figure>
 
     </section>
   )
