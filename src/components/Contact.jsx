@@ -1,12 +1,14 @@
 import useWindowSize from '../hooks/useWindowSize'
-import { AtSign, Bot, Globe, Mail, UserRound } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
+import { FaLinkedinIn } from 'react-icons/fa6'
 
 const links = [
   { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', Icon: Mail },
-  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: Globe },
-  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: Bot },
-  { label: 'X', href: 'https://x.com/HenaTeke', Icon: AtSign },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?', Icon: UserRound },
+  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: SiGithub, isBrand: true },
+  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: SiHuggingface, isBrand: true },
+  { label: 'X', href: 'https://x.com/HenaTeke', Icon: SiX, isBrand: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?', Icon: FaLinkedinIn, isBrand: true },
 ]
 
 export default function Contact() {
@@ -15,7 +17,7 @@ export default function Contact() {
   const firstRowLinks = links.slice(0, 3)
   const secondRowLinks = links.slice(3)
 
-  const renderContactButton = ({ label, href, Icon }) => (
+  const renderContactButton = ({ label, href, Icon, isBrand }) => (
     <a
       key={label}
       href={href}
@@ -49,7 +51,9 @@ export default function Contact() {
       aria-label={label}
     >
       <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Icon size={14} strokeWidth={1.5} />
+        {isBrand
+          ? <Icon size={13} style={{ opacity: 0.9 }} />
+          : <Icon size={14} strokeWidth={1.5} style={{ opacity: 0.9 }} />}
       </span>
       <span style={{
         fontFamily: 'var(--mono)',
