@@ -126,19 +126,25 @@ export default function Projects() {
               <div style={{
                 width: '100%',
                 maxWidth: '640px',
+                aspectRatio: '16 / 9',
+                position: 'relative',
                 borderRadius: '0.9rem',
                 overflow: 'hidden',
                 border: '1px solid var(--border)',
                 background: 'var(--bg-2)',
+                lineHeight: 0,
               }}>
                 <img
                   src={`${import.meta.env.BASE_URL}${p.image}`}
                   alt={`${p.name} preview`}
                   style={{
+                    position: 'absolute',
+                    inset: 0,
                     display: 'block',
                     width: '100%',
-                    height: isMobile ? '170px' : '220px',
+                    height: '100%',
                     objectFit: 'cover',
+                    objectPosition: 'center',
                   }}
                 />
               </div>

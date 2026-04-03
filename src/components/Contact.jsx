@@ -1,13 +1,12 @@
 import useWindowSize from '../hooks/useWindowSize'
-import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
-import { FaEnvelope, FaLinkedinIn } from 'react-icons/fa'
+import { AtSign, Bot, Globe, Mail, UserRound } from 'lucide-react'
 
 const links = [
-  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', Icon: FaEnvelope },
-  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: SiGithub },
-  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: SiHuggingface },
-  { label: 'X', href: 'https://x.com/HenaTeke', Icon: SiX },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?', Icon: FaLinkedinIn },
+  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', Icon: Mail },
+  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: Globe },
+  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: Bot },
+  { label: 'X', href: 'https://x.com/HenaTeke', Icon: AtSign },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?', Icon: UserRound },
 ]
 
 export default function Contact() {
@@ -50,7 +49,7 @@ export default function Contact() {
       aria-label={label}
     >
       <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Icon size={14} />
+        <Icon size={14} strokeWidth={1.5} />
       </span>
       <span style={{
         fontFamily: 'var(--mono)',

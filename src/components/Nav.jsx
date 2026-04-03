@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa'
+import { Moon, Sun } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const links = ['about', 'experience', 'projects', 'skills', 'contact']
@@ -103,7 +103,7 @@ export default function Nav() {
                 placeItems: 'center',
               }}
             >
-              {theme === 'dark' ? <FaSun size={13} /> : <FaMoon size={13} />}
+              {theme === 'dark' ? <Sun size={13} strokeWidth={1.5} /> : <Moon size={13} strokeWidth={1.5} />}
             </button>
           </div>
         )}
@@ -126,7 +126,7 @@ export default function Nav() {
                 placeItems: 'center',
               }}
             >
-              {theme === 'dark' ? <FaSun size={13} /> : <FaMoon size={13} />}
+              {theme === 'dark' ? <Sun size={13} strokeWidth={1.5} /> : <Moon size={13} strokeWidth={1.5} />}
             </button>
 
             <button
