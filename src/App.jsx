@@ -9,7 +9,6 @@ import GitHubCommitGraph from './components/GitHubCommitGraph'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import SectionDivider from './components/SectionDivider'
 
 function App() {
   useReveal()
@@ -31,15 +30,10 @@ function App() {
       
       <Nav />
       <Hero />
-      <SectionDivider />
       <About />
-      <SectionDivider />
       <Projects />
-      <SectionDivider />
       <GitHubCommitGraph />
-      <SectionDivider />
       <Skills />
-      <SectionDivider />
       <Contact />
       <Footer />
 

@@ -98,10 +98,6 @@ body, p, span, a, button, input, textarea, select, li, label {
   font-family: 'Geist Pixel', monospace;
 }
 
-section {
-  border-top: 1px solid var(--border);
-}
-
 body::after {
   content: '';
   position: fixed;
@@ -135,29 +131,6 @@ body::after {
 .reveal.d2 { transition-delay: 0.3s; }
 .reveal.d3 { transition-delay: 0.45s; }
 
-.section-divider {
-  height: 24px;
-  width: 100%;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin: 0.5rem 0;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    color-mix(in srgb, var(--text-3) 13%, transparent) 0,
-    color-mix(in srgb, var(--text-3) 13%, transparent) 1px,
-    transparent 1px,
-    transparent 6px
-  );
-  opacity: 0.72;
-}
-
-.section-divider + section {
-  padding-top: 5.5rem !important;
-}
-
-.section-divider + section#about {
-  padding-top: 3.5rem !important;
-}
 
 .section-heading {
   display: flex;
@@ -533,14 +506,6 @@ body::after {
 
   .section-heading-title {
     font-size: clamp(1.15rem, 6vw, 1.55rem);
-  }
-
-  .section-divider + section {
-    padding-top: 4rem !important;
-  }
-
-  .section-divider + section#about {
-    padding-top: 2.4rem !important;
   }
 
   .skills-card {
