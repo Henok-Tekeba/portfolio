@@ -22,7 +22,7 @@ function getPresenceStatus() {
   }
 
   if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
-    return { label: 'Currently: deep in code', color: '#d4a853' }
+    return { label: 'Currently: idle', color: '#d4a853' }
   }
 
   return { label: 'Currently: deep in code', color: '#3dbe76' }
@@ -165,7 +165,7 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        I'm a 2nd-year ECE student at AAU who got tired of waiting for someone else to build Amharic AI - so I started doing it myself.
+        I'm a 2nd year ECE student at AAU who got tired of waiting for someone else to build Amharic AI, so I started doing it myself.
       </p>
 
     </section>
