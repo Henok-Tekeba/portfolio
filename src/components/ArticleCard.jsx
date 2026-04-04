@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom'
+
 export default function ArticleCard({ article, delayClass = '' }) {
+  const isPublished = article.status.toLowerCase() === 'published'
+
   return (
     <article
       className={`reveal ${delayClass}`.trim()}
@@ -58,6 +62,23 @@ export default function ArticleCard({ article, delayClass = '' }) {
       >
         {article.status}
       </span>
+
+      {isPublished && (
+        <Link
+          to={`/articles/${article.slug}`}
+          style={{
+            fontFamily: 'var(--mono)',
+            fontSize: '0.62rem',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: 'var(--accent)',
+            textDecoration: 'none',
+            width: 'fit-content',
+          }}
+        >
+          Read article {'->'}
+        </Link>
+      )}
     </article>
   )
 }
