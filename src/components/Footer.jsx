@@ -30,7 +30,7 @@ export default function Footer() {
           textTransform: 'uppercase',
           color: 'var(--text-3)',
         }}>
-          by Jeff Bezos
+          — Han Solo
         </figcaption>
       </figure>
 

@@ -28,8 +28,8 @@ export default function About() {
             color: 'var(--text)',
             marginBottom: '2rem',
           }}>
-            Building useful products
-            <span style={{ color: 'var(--accent)' }}> for Ethiopia.</span>
+            I build things.
+            <span style={{ color: 'var(--accent)' }}> Then I make them work.</span>
           </h2>
 
           <p className="reveal d1" style={{
@@ -40,7 +40,7 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            I am a second-year ECE student at Addis Ababa University working on Amharic voice AI and full-stack product delivery.
+            Second-year ECE student at AAU. I fine-tune speech models, ship full-stack products, and think way too much about what Ethiopian tech could look like in 10 years.
           </p>
 
           <p className="reveal d2" style={{
@@ -50,7 +50,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            Most of my work is grounded in local use-cases: speech systems, tooling, and products people can actually use day to day.
+            My work lives at the intersection of ML and real life - Amharic speech recognition, voice interfaces, and software that actually runs in Ethiopia, not just on paper.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function About() {
           {[
             { key: 'location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
             { key: 'university', value: 'Addis Ababa University', Icon: GraduationCap },
-            { key: 'status', value: 'Open to internships & collaborations', Icon: Sparkles },
+            { key: 'status', value: 'Open to internships & people building real things', Icon: Sparkles },
           ].map(({ key, value, Icon }) => (
             <div key={key} style={{
               display: 'flex',

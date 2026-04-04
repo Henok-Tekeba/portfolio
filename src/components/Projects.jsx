@@ -4,7 +4,7 @@ const projects = [
   {
     name: 'voiET',
     tag: 'AI Startup',
-    desc: 'Amharic voice AI platform for Ethiopian banks and telecoms, with improved Whisper ASR and XTTSv2 TTS.',
+    desc: 'I fine-tuned Whisper on 38K+ Amharic samples and built a full voice AI pipeline targeting Ethiopian banks and telecoms. This is my main bet.',
     tags: ['PyTorch', 'Whisper', 'LoRA', 'HuggingFace', 'Amharic ASR'],
     link: 'https://huggingface.co/Henokk',
     linkLabel: 'HuggingFace →',
@@ -13,7 +13,7 @@ const projects = [
   {
     name: 'voiET Landing Page',
     tag: 'Full Stack',
-    desc: 'Production waitlist platform built with Next.js, Express, and PostgreSQL.',
+    desc: 'Learned backend from scratch and shipped a real waitlist platform - Next.js frontend, Express + PostgreSQL backend, deployed and live.',
     tags: ['Next.js', 'Tailwind', 'Node.js', 'PostgreSQL', 'Railway'],
     link: 'https://voiet.vercel.app',
     linkLabel: 'Live Site →',
@@ -22,7 +22,7 @@ const projects = [
   {
     name: 'VEX Robotics',
     tag: 'Robotics',
-    desc: 'AAU VEX project focused on autonomous control, embedded programming, and mechanical design.',
+    desc: 'Our AAU team competing in VEX - autonomous control, embedded C++, and a lot of late nights figuring out why the robot disagrees with us.',
     tags: ['C++', 'Embedded', 'Autonomous', 'VEX'],
     link: '#',
     linkLabel: 'View Project →',
@@ -30,15 +30,15 @@ const projects = [
   {
     name: 'Addis Cars Image Classifier',
     tag: 'Machine Learning',
-    desc: 'Local car dataset and TensorFlow classifier trained on Addis Ababa vehicle categories.',
+    desc: "Built my own dataset from Addis streets and trained a classifier on it. If the data doesn't exist, you collect it yourself.",
     tags: ['Python', 'TensorFlow', 'Computer Vision', 'Dataset Collection'],
     link: 'https://github.com/Henok-Tekeba/Addis-Cars-Image-Classifier',
     linkLabel: 'GitHub →',
   },
   {
-    name: 'Icog Labs Landing Page',
+    name: 'iCog Labs Landing Page',
     tag: 'Frontend',
-    desc: "Landing page delivered for Icog Labs.",
+    desc: "Redesigned iCog Labs' website unprompted - just because I thought I could do it better. Built it, deployed it, sent it.",
     tags: ['TypeScript', 'React'],
     link: 'https://icog.vercel.app',
     linkLabel: 'Live Site →',
@@ -47,7 +47,7 @@ const projects = [
   {
     name: 'X Electron Wrapper',
     tag: 'Linux',
-    desc: 'Minimal Electron wrapper for X on Linux.',
+    desc: 'Needed a cleaner way to use X on Linux. Wrapped it in Electron. Small project, but I like shipping things I actually use.',
     tags: ['JavaScript', 'Electron', 'Linux'],
     link: 'https://github.com/Henok-Tekeba/X-electron_wrapper',
     linkLabel: 'GitHub →',

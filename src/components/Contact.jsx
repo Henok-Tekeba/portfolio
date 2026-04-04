@@ -88,8 +88,8 @@ export default function Contact() {
           color: 'var(--text)',
           marginBottom: '1.2rem',
         }}>
-          If you are building for
-          <span style={{ color: 'var(--accent)' }}> Ethiopia, let's talk.</span>
+          If you're building for Ethiopia -
+          <span style={{ color: 'var(--accent)' }}> or think I can help - let's talk.</span>
         </h2>
 
         <p className="reveal d1" style={{
@@ -100,7 +100,7 @@ export default function Contact() {
           lineHeight: 1.8,
           marginBottom: '1.6rem',
         }}>
-          Open to internships, engineering roles, and practical AI collaborations.
+          I'm looking for internships, real engineering problems, and people who want to build things that last. Not just vibes.
         </p>
 
         {!isMobile && (
