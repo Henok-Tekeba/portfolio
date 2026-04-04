@@ -2,7 +2,6 @@ import useReveal from '../hooks/useReveal'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import About from '../components/About'
-import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import GitHubCommitGraph from '../components/GitHubCommitGraph'
 import Skills from '../components/Skills'
@@ -17,7 +16,6 @@ export default function HomePage() {
       <Nav />
       <Hero />
       <About />
-      <Experience />
       <Projects />
       <GitHubCommitGraph />
       <Skills />
