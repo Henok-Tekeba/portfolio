@@ -13,6 +13,7 @@ export default function ArticleDetailPage() {
   const { slug } = useParams()
   const article = getArticleBySlug(slug || '')
   const [theme, setTheme] = useState('dark')
+  const desktopInset = 'max(1rem, calc((100vw - var(--shell-width)) / 2))'
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -43,13 +44,13 @@ export default function ArticleDetailPage() {
         style={{
           position: 'fixed',
           top: 0,
-          left: 0,
-          right: 0,
+          left: isMobile ? 0 : desktopInset,
+          right: isMobile ? 0 : desktopInset,
           zIndex: 1000,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: isMobile ? '1rem 1.5rem' : '1rem 3rem',
+          padding: isMobile ? '1rem 1.5rem' : '1rem 2rem',
           background: 'color-mix(in srgb, var(--bg) 92%, transparent)',
           borderBottom: '1px solid var(--border)',
           backdropFilter: 'blur(12px)',

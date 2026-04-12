@@ -30,6 +30,7 @@
   --display-weight-light: 400;
   --display-weight-thin:  400;
   --display-weight-reg:   400;
+  --shell-width: min(920px, calc(100vw - 2rem));
 }
 
 [data-theme="light"] {
@@ -99,8 +100,35 @@ body, p, span, a, button, input, textarea, select, li, label {
 }
 
 .app-shell {
-  width: min(1400px, calc(100% - 5rem));
+  width: var(--shell-width);
   margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.app-shell::before,
+.app-shell::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  pointer-events: none;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--border-2) 88%, transparent) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.app-shell::before {
+  left: max(1rem, calc((100vw - var(--shell-width)) / 2));
+}
+
+.app-shell::after {
+  right: max(1rem, calc((100vw - var(--shell-width)) / 2));
 }
 
 body::after {
@@ -422,6 +450,11 @@ body::after {
 @media (max-width: 768px) {
   .app-shell {
     width: 100%;
+  }
+
+  .app-shell::before,
+  .app-shell::after {
+    display: none;
   }
 
   /* Nav */

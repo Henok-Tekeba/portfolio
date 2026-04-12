@@ -50,7 +50,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            My work lives at the intersection of ML and real life - Amharic speech recognition, voice interfaces, and software that actually runs in Ethiopia, not just on paper.
+            My work lives at the intersection of ML and real life , Amharic speech recognition, voice interfaces, and software that actually runs in Ethiopia, not just on paper.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ const projects = [
   {
     name: 'voiET',
     tag: 'AI Startup',
-    desc: 'I fine-tuned Whisper on 38K+ Amharic samples and built a full voice AI pipeline targeting Ethiopian banks and telecoms. This is my main bet.',
+    desc: 'I built a wrapper on a fine tuned Whisper on 38K+ Amharic samples and built a full voice AI pipeline targeting Ethiopian banks and telecoms. This is my main bet.',
     tags: ['PyTorch', 'Whisper', 'LoRA', 'HuggingFace', 'Amharic ASR'],
     link: 'https://huggingface.co/Henokk',
     linkLabel: 'HuggingFace →',
@@ -13,7 +13,7 @@ const projects = [
   {
     name: 'voiET Landing Page',
     tag: 'Full Stack',
-    desc: 'Learned backend from scratch and shipped a real waitlist platform - Next.js frontend, Express + PostgreSQL backend, deployed and live.',
+    desc: 'Learned backend from scratch and shipped a real waitlist platform Next.js frontend, Express + PostgreSQL backend, deployed and live.',
     tags: ['Next.js', 'Tailwind', 'Node.js', 'PostgreSQL', 'Railway'],
     link: 'https://voiet.vercel.app',
     linkLabel: 'Live Site →',
@@ -30,7 +30,7 @@ const projects = [
   {
     name: 'Addis Cars Image Classifier',
     tag: 'Machine Learning',
-    desc: "Built my own dataset from Addis streets and trained a classifier on it. If the data doesn't exist, you collect it yourself.",
+    desc: "Built my own dataset from Addis streets and trained a classifier on it. If the data doesn't exist, I collect it myself.",
     tags: ['Python', 'TensorFlow', 'Computer Vision', 'Dataset Collection'],
     link: 'https://github.com/Henok-Tekeba/Addis-Cars-Image-Classifier',
     linkLabel: 'GitHub →',
@@ -38,7 +38,7 @@ const projects = [
   {
     name: 'iCog Labs Landing Page',
     tag: 'Frontend',
-    desc: "Redesigned iCog Labs' website unprompted - just because I thought I could do it better. Built it, deployed it, sent it.",
+    desc: "Redesigned iCog Labs' website unprompted, just because I thought I could do it better. Built it, deployed it, sent it.",
     tags: ['TypeScript', 'React'],
     link: 'https://icog.vercel.app',
     linkLabel: 'Live Site →',

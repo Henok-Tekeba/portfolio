@@ -18,6 +18,7 @@ export default function Nav() {
   const [theme, setTheme] = useState('dark')
   const width = useWindowSize()
   const isMobile = width < 768
+  const desktopInset = 'max(1rem, calc((100vw - var(--shell-width)) / 2))'
 
   useEffect(() => {
     const onScroll = () => setSticky(window.scrollY > 60)
@@ -53,7 +54,9 @@ export default function Nav() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: isMobile ? '1rem 1.5rem' : sticky ? '1rem 3rem' : '1.5rem 3rem',
+        left: isMobile ? 0 : desktopInset,
+        right: isMobile ? 0 : desktopInset,
+        padding: isMobile ? '1rem 1.5rem' : sticky ? '1rem 2rem' : '1.25rem 2rem',
         background: sticky || menuOpen ? 'color-mix(in srgb, var(--bg) 92%, transparent)' : 'transparent',
         borderBottom: sticky || menuOpen ? '1px solid var(--border)' : '1px solid transparent',
         backdropFilter: sticky || menuOpen ? 'blur(12px)' : 'none',
