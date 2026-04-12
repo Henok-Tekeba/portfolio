@@ -40,7 +40,7 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            Second year ECE student at AAU. I fine tune speech models, ship full stack products, and think way too much about what Ethiopian tech could look like in 10 years.
+            Second-year ECE student at AAU. I fine-tune speech models, ship full-stack products, and think deeply about what Ethiopian tech could look like in 10 years.
           </p>
 
           <p className="reveal d2" style={{
@@ -50,7 +50,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            My work lives at the intersection of ML and real life , Amharic speech recognition, voice interfaces, and software that actually runs in Ethiopia, not just on paper.
+            My work sits at the intersection of ML and real life: Amharic speech recognition, voice interfaces, and software that actually runs in Ethiopia, not just on paper.
           </p>
         </div>
 

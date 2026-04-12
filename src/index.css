@@ -396,12 +396,29 @@ body::after {
 }
 
 /* ── SKILLS GRID ── */
+.skills-groups {
+  display: grid;
+  gap: 2rem;
+}
+
+.skills-group {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.skills-group-title {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
   gap: 0.75rem;
   max-width: 980px;
-  margin: 0 auto;
 }
 
 .skills-card {
@@ -539,6 +556,10 @@ body::after {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.85rem;
     max-width: none;
+  }
+
+  .skills-group {
+    gap: 0.8rem;
   }
 
   .section-heading {

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henok Tekeba | Resume</title>
+    <style>
+      :root {
+        --bg: #0c0c0c;
+        --panel: #121212;
+        --border: #2a2a2a;
+        --text: #ece7df;
+        --muted: #b4ab9d;
+        --accent: #d4a853;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Geist Pixel", monospace;
+      }
+
+      main {
+        width: min(840px, calc(100% - 2rem));
+        margin: 2rem auto 3rem;
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        background: var(--panel);
+      }
+
+      h1, h2 {
+        margin: 0;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        color: var(--accent);
+      }
+
+      h2 {
+        font-size: 0.78rem;
+        margin-bottom: 0.7rem;
+        color: var(--muted);
+      }
+
+      p, li {
+        margin: 0;
+        font-size: 0.72rem;
+        line-height: 1.8;
+        color: var(--text);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .section {
+        margin-top: 1.4rem;
+        padding-top: 1rem;
+        border-top: 1px dashed var(--border);
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.2rem;
+        display: grid;
+        gap: 0.4rem;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <h1>Henok Tekeba</h1>
+        <p class="muted">Addis Ababa, Ethiopia</p>
+      </div>
+      <p class="muted">ML Engineer | Full-Stack Builder | ECE Student</p>
+
+      <div class="section">
+        <h2>Summary</h2>
+        <p>
+          Second-year ECE student at AAU building practical AI and software products,
+          focused on Amharic speech systems and tools for Ethiopian users.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Selected Work</h2>
+        <ul>
+          <li><strong>voiET:</strong> Fine-tuned Whisper on 38K+ Amharic samples and built a voice AI pipeline for local banking and telecom use cases.</li>
+          <li><strong>voiET Waitlist Platform:</strong> Shipped a production waitlist product with Next.js, Express, and PostgreSQL.</li>
+          <li><strong>Addis Cars Classifier:</strong> Built a custom dataset from Addis streets and trained a vision model for car classification.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Core Skills</h2>
+        <p>Python, TypeScript, JavaScript, React, Next.js, Node.js, PostgreSQL, PyTorch, Hugging Face, Git</p>
+      </div>
+
+      <div class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:tekebahenok6@gmail.com">tekebahenok6@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Henok-Tekeba" target="_blank" rel="noreferrer">github.com/Henok-Tekeba</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/henok-ayele-6ab58b356" target="_blank" rel="noreferrer">linkedin.com/in/henok-ayele-6ab58b356</a></p>
+      </div>
+    </main>
+  </body>
+</html>

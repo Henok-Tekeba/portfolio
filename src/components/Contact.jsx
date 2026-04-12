@@ -1,10 +1,13 @@
 import useWindowSize from '../hooks/useWindowSize'
-import { Mail } from 'lucide-react'
+import { FileText, Mail } from 'lucide-react'
 import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
 import { FaLinkedinIn } from 'react-icons/fa6'
 
+const resumeHref = `${import.meta.env.BASE_URL}resume.html`
+
 const links = [
   { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', Icon: Mail },
+  { label: 'Resume', href: resumeHref, Icon: FileText },
   { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: SiGithub, isBrand: true },
   { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: SiHuggingface, isBrand: true },
   { label: 'X', href: 'https://x.com/HenaTeke', Icon: SiX, isBrand: true },
