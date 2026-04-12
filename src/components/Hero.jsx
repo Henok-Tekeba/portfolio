@@ -3,7 +3,7 @@ import { FileText } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const rotatingHeadlines = [
-  '20-year-old engineer',
+  '20 - engineer',
   'Always learning',
   'Building things that matter',
   'Hustling',
@@ -167,7 +167,7 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        I'm a second-year ECE student at AAU who got tired of waiting for someone else to build Amharic AI, so I started doing it myself.
+        I'm a second year ECE student at AAU who got tired of waiting for someone else to build Amharic AI, so I started doing it myself.
       </p>
 
       <a
