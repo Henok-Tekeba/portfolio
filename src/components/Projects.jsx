@@ -110,16 +110,14 @@ export default function Projects() {
             {p.image && (
               <div style={{
                 width: '100%',
-                maxWidth: '640px',
+                maxWidth: 'none',
                 aspectRatio: '16 / 9',
                 position: 'relative',
                 borderRadius: '0.9rem',
                 border: '1px solid color-mix(in srgb, var(--border) 72%, transparent)',
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(${imageBackdrop})`,
+                backgroundImage: `url(${imageBackdrop})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundBlendMode: 'multiply',
-                padding: '0.2rem',
                 overflow: 'hidden',
                 lineHeight: 0,
               }}>
@@ -132,8 +130,8 @@ export default function Projects() {
                     height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center',
-                    borderRadius: '0.65rem',
-                    opacity: 0.96,
+                    borderRadius: 0,
+                    opacity: 1,
                   }}
                 />
               </div>
