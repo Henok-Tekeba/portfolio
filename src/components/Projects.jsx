@@ -57,6 +57,7 @@ const projects = [
 export default function Projects() {
   const width = useWindowSize()
   const isMobile = width < 768
+  const imageBackdrop = `${import.meta.env.BASE_URL}Backhgroundimg.jpg`
 
   return (
     <section id="projects" style={{
@@ -113,22 +114,26 @@ export default function Projects() {
                 aspectRatio: '16 / 9',
                 position: 'relative',
                 borderRadius: '0.9rem',
+                border: '1px solid color-mix(in srgb, var(--border) 72%, transparent)',
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(${imageBackdrop})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundBlendMode: 'multiply',
+                padding: '0.2rem',
                 overflow: 'hidden',
-                border: '1px solid var(--border)',
-                background: 'var(--bg-2)',
                 lineHeight: 0,
               }}>
                 <img
                   src={`${import.meta.env.BASE_URL}${p.image}`}
                   alt={`${p.name} preview`}
                   style={{
-                    position: 'absolute',
-                    inset: 0,
                     display: 'block',
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center',
+                    borderRadius: '0.65rem',
+                    opacity: 0.96,
                   }}
                 />
               </div>
