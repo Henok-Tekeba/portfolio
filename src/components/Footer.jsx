@@ -30,7 +30,7 @@ export default function Footer() {
           textTransform: 'uppercase',
           color: 'var(--text-3)',
         }}>
-          — Han Solo
+          Han Solo
         </figcaption>
       </figure>
 

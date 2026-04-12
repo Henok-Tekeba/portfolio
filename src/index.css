@@ -113,14 +113,17 @@ body, p, span, a, button, input, textarea, select, li, label {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 1px;
+  width: 8px;
   pointer-events: none;
   z-index: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--border-2) 88%, transparent) 0 10px,
-    transparent 10px 20px
-  );
+  opacity: 0.9;
+  background-image:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--border-2) 85%, transparent) 0.7px, transparent 0.9px),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--border) 80%, transparent) 0.55px, transparent 0.75px);
+  background-size: 4px 4px, 6px 6px;
+  background-position: 0 0, 1px 1px;
+  background-repeat: repeat, repeat;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 93%, transparent 100%);
 }
 
 .app-shell::before {
