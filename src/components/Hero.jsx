@@ -3,10 +3,10 @@ import { FileText } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const rotatingHeadlines = [
-  '20 - engineer',
-  'Always learning',
-  'Building things that matter',
-  'Hustling',
+  'Amharic AI builder',
+  'ML engineer in progress',
+  'Shipping for real users',
+  'Focused on useful systems',
 ]
 
 function getPresenceStatus() {
@@ -157,7 +157,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bio */}
       <p style={{
         fontFamily: 'var(--display)',
         fontWeight: 'var(--display-weight-light)',
@@ -167,7 +166,7 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        I'm a second year ECE student at AAU who got tired of waiting for someone else to build AI that serves Amharic speakers, so I started doing it myself.
+        I am a second-year ECE student at AAU building speech AI and product systems for Ethiopian users. My focus is simple: make language technology useful in the places where it is usually ignored.
       </p>
 
       <a

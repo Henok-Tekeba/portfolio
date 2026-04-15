@@ -20,7 +20,7 @@ export default function Footer() {
           textTransform: 'uppercase',
           color: 'var(--text)',
         }}>
-          "never tell me the odds"
+          BUILD USEFUL THINGS
         </blockquote>
         <figcaption style={{
           marginTop: '0.55rem',
@@ -30,27 +30,27 @@ export default function Footer() {
           textTransform: 'uppercase',
           color: 'var(--text-3)',
         }}>
-          Han Solo
+          Speech AI, Product Systems, Ethiopia
         </figcaption>
       </figure>
 
       <div style={{ display: 'flex', gap: '1.6rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-      <p style={{
-        fontFamily: 'var(--mono)',
-        fontSize: '0.65rem',
-        letterSpacing: '0.1em',
-        color: 'var(--text-3)',
-      }}>
-        © 2026 <span style={{ color: 'var(--text-2)' }}>Henok Tekeba</span>
-      </p>
-      <p style={{
-        fontFamily: 'var(--mono)',
-        fontSize: '0.65rem',
-        letterSpacing: '0.1em',
-        color: 'var(--text-3)',
-      }}>
-        Addis Ababa, Ethiopia
-      </p>
+        <p style={{
+          fontFamily: 'var(--mono)',
+          fontSize: '0.65rem',
+          letterSpacing: '0.1em',
+          color: 'var(--text-3)',
+        }}>
+          2026 <span style={{ color: 'var(--text-2)' }}>Henok Tekeba</span>
+        </p>
+        <p style={{
+          fontFamily: 'var(--mono)',
+          fontSize: '0.65rem',
+          letterSpacing: '0.1em',
+          color: 'var(--text-3)',
+        }}>
+          Addis Ababa, Ethiopia
+        </p>
       </div>
     </footer>
   )

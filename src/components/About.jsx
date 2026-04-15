@@ -28,8 +28,8 @@ export default function About() {
             color: 'var(--text)',
             marginBottom: '2rem',
           }}>
-            I build things.
-            <span style={{ color: 'var(--accent)' }}> Then I make them work.</span>
+            I build for the gap
+            <span style={{ color: 'var(--accent)' }}> between strong ideas and real use.</span>
           </h2>
 
           <p className="reveal d1" style={{
@@ -40,7 +40,7 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            Second-year ECE student at AAU. I fine-tune speech models, ship full-stack products, and think deeply about what Ethiopian tech could look like in 10 years.
+            I work across ML and product engineering. Most of my time goes into speech systems, web products, and the unglamorous parts of shipping that turn experiments into tools people can actually use.
           </p>
 
           <p className="reveal d2" style={{
@@ -50,7 +50,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            My work sits at the intersection of ML and real life: Amharic speech recognition, voice interfaces, and software that actually runs in Ethiopia, not just on paper.
+            The thread through my work is local usefulness. I care about Amharic speech recognition, voice interfaces, and software that respects the realities of Ethiopian users instead of assuming Silicon Valley defaults.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function About() {
           {[
             { key: 'location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
             { key: 'university', value: 'Addis Ababa University', Icon: GraduationCap },
-            { key: 'status', value: 'Open to internships & people building real things', Icon: Sparkles },
+            { key: 'status', value: 'Open to internships, ML roles, and product teams solving real problems', Icon: Sparkles },
           ].map(({ key, value, Icon }) => (
             <div key={key} style={{
               display: 'flex',

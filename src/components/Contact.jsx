@@ -91,8 +91,8 @@ export default function Contact() {
           color: 'var(--text)',
           marginBottom: '1.2rem',
         }}>
-          If you're building for Ethiopia -
-          <span style={{ color: 'var(--accent)' }}> or think I can help - let's talk.</span>
+          Building something useful for Ethiopia?
+          <span style={{ color: 'var(--accent)' }}> I would love to hear about it.</span>
         </h2>
 
         <p className="reveal d1" style={{
@@ -103,7 +103,7 @@ export default function Contact() {
           lineHeight: 1.8,
           marginBottom: '1.6rem',
         }}>
-          I'm looking for internships, real engineering problems, and people who want to build things that last. Not just vibes.
+          I am looking for internships, ML engineering work, and teams building products that need technical curiosity, speed, and local context. If that sounds like your world, reach out.
         </p>
 
         {!isMobile && (
